@@ -17,7 +17,7 @@ const Header: React.FC = () => {
           background: '#008EA7'
         }}
       >
-        <div style={{marginLeft:'190px', marginRight:'190px'}}>
+        <div style={{marginLeft:'150px', marginRight:'150px'}}>
         <div
           style={{
             display: 'flex',

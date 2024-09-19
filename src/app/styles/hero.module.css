@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Chewy&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap');
 
 
 .heroSection {
@@ -8,6 +9,7 @@
   justify-content: space-between;
   padding: 50px 0;
   position: relative;
+  min-height: 100vh;
 }
 
 .textContent {
@@ -74,11 +76,14 @@
   background-color: #C0392B; 
 }
 
-.imageWrapper {
-  max-width: 400px;
-  flex-shrink: 0;
+.free{
+  font-family: 'Shadows Into Light', cursive;
+  font-size: 37px;
+  font-weight: 400;
+  line-height: 59.44px;
+  text-align: left;
+  color: white;
 }
-
 .backgroundImage {
   position: absolute;
   top: -20px; 
@@ -87,4 +92,43 @@
   height: 277px; 
   z-index: 1; 
   overflow: hidden;
+}
+
+.phone{
+  position: absolute; 
+  top: 0; 
+  left: 47%;
+  width: 455.17px;
+  z-index: 2;
+  height: 597.36px;
+  gap: 0px;
+  opacity: 0px;
+}
+
+.backgroundBehindPhone {
+  position: absolute;
+  width: 400px;
+  height: 500px;
+  z-index: 1; 
+  overflow: hidden;
+  top: 12%; 
+  left: 65%;
+}
+
+
+.object {
+  position: absolute; 
+  top: 40%; 
+  left: 48%; 
+  transform: translate(-50%, -50%) rotate(7deg); 
+  width: 343.42px; 
+  height: 321.62px; 
+  z-index: 1; 
+}
+.obj{
+  position: absolute; 
+  top: 70%; 
+  left: 42.6%; 
+  transform: translate(-50%, -50%) rotate(7deg); 
+  z-index: 2; 
 }
