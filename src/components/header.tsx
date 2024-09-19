@@ -3,7 +3,7 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image'; 
-import { FaInstagram, FaFacebook } from 'react-icons/fa'; // Import icons
+import { FaInstagram, FaFacebook } from 'react-icons/fa'; 
 import logo from '../images/logo.png';
 
 const Header: React.FC = () => {
@@ -51,7 +51,7 @@ const Header: React.FC = () => {
             style={{
               display: 'flex',
               alignItems: 'center',
-              gap: '20px',
+              gap: '30px',
               color: 'white',
             }}
           >
