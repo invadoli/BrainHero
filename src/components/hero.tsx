@@ -4,13 +4,15 @@ import Link from 'next/link';
 import phone from '../images/phone.png';
 import googlePlay from '../images/googlePlay.png'; 
 import appStore from '../images/appStore.png'; 
+import Clouds from '../images/clouds.png';
 import CloudBackground from '../images/cloud.png';
 import BackgroundBehindPhone from '../images/square.png';
 import object from '../images/object.png';
 import obj from '../images/obj.png';
+import star from '../images/star.png';
 import styles from '../app/styles/hero.module.css';
 
-const Hero: React.FC = () => {
+const Hero = () => {
   return (
     <div style={{ backgroundColor: '#008EA7' }}>
       <section className={styles.heroSection} style={{ marginLeft: '150px' }}>
@@ -58,6 +60,13 @@ const Hero: React.FC = () => {
           <Image src={phone} alt="Phone" />
         </div>
       </section>
+      <section className={styles.clouds}>
+        <div className={styles.imageContainer}>
+          <Image src={Clouds} alt="Cloud Background" className={styles.cloudImage} />
+          <Image src={star} alt="star" className={styles.star} />
+        </div>
+      </section>
+
     </div>
   );
 };
