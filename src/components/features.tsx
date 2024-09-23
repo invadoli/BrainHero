@@ -1,6 +1,5 @@
 import React from 'react';
 import Image from 'next/image';
-import Link from 'next/link';
 import brain from '../images/brain.png';
 import brainback from '../images/BrainBack.png';
 import book from '../images/book.png';

@@ -105,6 +105,14 @@ export default function BookCards() {
           </div>
         </div>
       </section>
+
+      <section className="bg-white py-10">
+        <div className="flex flex-wrap justify-center mt-4 mb-4">
+        <button className="px-5 py-2 w[147px] bg-[#FA5E55] text-[#FFFFFF] rounded-full font-bold cursor-pointer">
+            View All
+          </button>
+        </div>
+      </section>
     </>
   );
 }
