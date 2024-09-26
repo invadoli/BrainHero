@@ -22,8 +22,8 @@ export default function FeaturesHero() {
   return (
     <div className={`bg-[#FFB4C0] py-12 relative overflow-hidden ${poppins.className}`}>
       <section className="ml-[150px] mr-[150px]">
-        <div className="container mx-auto px-6">
-          <p className="text-xl md:text-xl font-bold text-[#703841] mb-8" style={{fontSize: '18px'}}>
+        <div className="container mx-auto ">
+          <p className="text-xl text-[#703841] mb-2" style={{fontSize: '18px', fontWeight: '600'}}>
             FEATURES
           </p>
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-8">
