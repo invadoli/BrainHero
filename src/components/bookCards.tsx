@@ -13,7 +13,7 @@ const BookCard: React.FC<BookCardProps> = ({ image, title, description, rating }
   const stars = Array(5).fill(0);
 
   return (
-    <div className="bg-white shadow-lg rounded-lg w-[259px] h-[480px] flex flex-col relative">
+    <div className="bg-white border rounded-lg w-[260px] h-[480px] flex flex-col relative">
       <div className="relative">
         <Image src={image} alt={title} className="h-60 w-full object-cover rounded-t-lg" />
         <div className="absolute top-[92%] left-2 flex items-center rounded-full border border-white shadow-lg bg-white p-1 ml-2">
@@ -26,8 +26,8 @@ const BookCard: React.FC<BookCardProps> = ({ image, title, description, rating }
         </div>
       </div>
 
-      <h3 className="text-xl font-bold mt-4 pl-5 pr-5">{title}</h3>
-      <p className="text-gray-700 mt-2 pl-5 pr-5 flex-grow">{description}</p>
+      <h3 className="text-xl font-bold mt-4 pl-5 pr-5" style={{fontSize: '16px'}}>{title}</h3>
+      <p className="text-gray-700 mt-2 pl-5 pr-5 flex-grow" style={{fontSize: '16px'}}>{description}</p>
 
       <div className="flex justify-center mb-4">
         <button className="px-5 py-2 w-[220px] bg-[#FFFFFF] text-[#FA5E55] rounded-full font-bold cursor-pointer border border-dashed border-[#FA5E55]">
