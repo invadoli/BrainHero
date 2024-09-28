@@ -10,7 +10,6 @@ interface BookCardProps {
   rating: number;
 }
 
-// Utility to handle star ratings, including half-stars
 const renderStars = (rating: number) => {
   const stars = [];
   for (let i = 1; i <= 5; i++) {
@@ -30,17 +29,13 @@ const BookCard: React.FC<BookCardProps> = ({ image, title, description, rating }
     <div className="bg-white border rounded-lg w-[240px] h-[460px] flex flex-col relative transition-shadow duration-300">
       <div className="relative">
         <Image src={image} alt={title} className="h-60 w-full object-cover rounded-t-lg" />
-        {/* Star Rating repositioned */}
         <div className="absolute top-[230px] left-[10px] flex items-center rounded-full bg-white p-1 shadow-md">
           {renderStars(rating)}
         </div>
       </div>
 
       <div className="p-4 flex flex-col flex-grow">
-        {/* Title with fixed height */}
         <h3 className="text-[#2D292A] font-bold mb-1 h-[40px]">{title}</h3>
-
-        {/* Description with fixed height */}
         <p className="text-[#4C4C4C] text-sm h-[80px] overflow-hidden">{description}</p>
       </div>
 
@@ -56,10 +51,10 @@ const BookCard: React.FC<BookCardProps> = ({ image, title, description, rating }
 export default function BookCards() {
   const books = [
     {
-      image: bookImg, // replace with correct image path
+      image: bookImg, 
       title: "Troy's Sweet Surprise",
       description: "Troy saves the day when a beautiful girl's ice cream falls to the ground.",
-      rating: 4.5, // Half-star rating
+      rating: 4.5, 
     },
     {
       image: bookImg,
