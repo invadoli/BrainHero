@@ -1,36 +1,51 @@
-import Image, { StaticImageData } from 'next/image';
-import { FaStar } from "react-icons/fa";
 import bookImg from '../images/bookImg.png';
+import Image, { StaticImageData } from 'next/image';
+import Link from 'next/link';
+import { FaStar, FaStarHalfAlt, FaRegStar } from "react-icons/fa";
 
 interface BookCardProps {
-  image: StaticImageData;     
-  title: string;       
-  description: string;  
-  rating: number;       
+  image: StaticImageData;
+  title: string;
+  description: string;
+  rating: number;
 }
 
-const BookCard: React.FC<BookCardProps> = ({ image, title, description, rating }) => {
-  const stars = Array(5).fill(0);
+// Utility to handle star ratings, including half-stars
+const renderStars = (rating: number) => {
+  const stars = [];
+  for (let i = 1; i <= 5; i++) {
+    if (i <= Math.floor(rating)) {
+      stars.push(<FaStar key={i} className="text-yellow-400 h-4 w-4" />);
+    } else if (i === Math.ceil(rating) && rating % 1 !== 0) {
+      stars.push(<FaStarHalfAlt key={i} className="text-yellow-400 h-4 w-4" />);
+    } else {
+      stars.push(<FaRegStar key={i} className="text-gray-300 h-4 w-4" />);
+    }
+  }
+  return stars;
+};
 
+const BookCard: React.FC<BookCardProps> = ({ image, title, description, rating }) => {
   return (
-    <div className="bg-white border rounded-lg w-[260px] h-[480px] flex flex-col relative">
+    <div className="bg-white border rounded-lg w-[240px] h-[460px] flex flex-col relative transition-shadow duration-300">
       <div className="relative">
         <Image src={image} alt={title} className="h-60 w-full object-cover rounded-t-lg" />
-        <div className="absolute top-[92%] left-2 flex items-center rounded-full border border-white shadow-lg bg-white p-1 ml-2">
-          {stars.map((_, index) => (
-            <FaStar
-              key={index}
-              className={`${rating > index ? "text-yellow-400" : "text-gray-300"} h-5 w-5`}
-            />
-          ))}
+        {/* Star Rating repositioned */}
+        <div className="absolute top-[230px] left-[10px] flex items-center rounded-full bg-white p-1 shadow-md">
+          {renderStars(rating)}
         </div>
       </div>
 
-      <h3 className="text-xl font-bold mt-4 pl-5 pr-5" style={{fontSize: '16px'}}>{title}</h3>
-      <p className="text-gray-700 mt-2 pl-5 pr-5 flex-grow" style={{fontSize: '16px'}}>{description}</p>
+      <div className="p-4 flex flex-col flex-grow">
+        {/* Title with fixed height */}
+        <h3 className="text-[#2D292A] font-bold mb-1 h-[40px]">{title}</h3>
+
+        {/* Description with fixed height */}
+        <p className="text-[#4C4C4C] text-sm h-[80px] overflow-hidden">{description}</p>
+      </div>
 
       <div className="flex justify-center mb-4">
-        <button className="px-5 py-2 w-[220px] bg-[#FFFFFF] text-[#FA5E55] rounded-full font-bold cursor-pointer border border-dashed border-[#FA5E55]">
+        <button className="px-5 py-2 w-[80%] bg-[#FFFFFF] text-[#FA5E55] rounded-full font-bold border border-dashed border-[#FA5E55] transition-colors duration-300 hover:bg-[#FA5E55] hover:text-white">
           Start Reading
         </button>
       </div>
@@ -38,15 +53,13 @@ const BookCard: React.FC<BookCardProps> = ({ image, title, description, rating }
   );
 };
 
-
-
 export default function BookCards() {
   const books = [
     {
-      image: bookImg,
+      image: bookImg, // replace with correct image path
       title: "Troy's Sweet Surprise",
       description: "Troy saves the day when a beautiful girl's ice cream falls to the ground.",
-      rating: 4, 
+      rating: 4.5, // Half-star rating
     },
     {
       image: bookImg,
@@ -58,7 +71,7 @@ export default function BookCards() {
       image: bookImg,
       title: "The Magical Adventure of Etan in Pristina",
       description: "Join Etan on an exciting adventure in Pristina, Kosovo, as he navigates through challenges.",
-      rating: 5,
+      rating: 4.5,
     },
     {
       image: bookImg,
@@ -70,49 +83,30 @@ export default function BookCards() {
 
   return (
     <>
-      <section>
-        <div className="flex flex-wrap justify-center gap-4 mt-16 mb-16">
-          <button className="px-5 py-2 w-40 bg-[#37008E] text-[#BE9BF5] rounded-full font-bold cursor-pointer">
-            Show All
-          </button>
-          <button className="px-5 py-2 w-[109px] bg-[#FFFFFF] text-[#4C4C4C] rounded-full font-bold cursor-pointer border border-dashed border-[#4C4C4C]">
-            Sports
-          </button>
-          <button className="px-5 py-2 w-[109px] bg-[#FFFFFF] text-[#4C4C4C] rounded-full font-bold cursor-pointer border border-dashed border-[#4C4C4C]">
-            Dance
-          </button>
-          <button className="px-5 py-2 w-[109px] bg-[#FFFFFF] text-[#4C4C4C] rounded-full font-bold cursor-pointer border border-dashed border-[#4C4C4C]">
-            Music
-          </button>
-          <button className="px-5 py-2 w-[109px] bg-[#FFFFFF] text-[#4C4C4C] rounded-full font-bold cursor-pointer border border-dashed border-[#4C4C4C]">
-            Indoor
-          </button>
+    <section className="bg-white py-10">
+      <div className=" mx-auto ml-[170px] mr-[170px]">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mx-auto">
+          {books.map((book, index) => (
+            <BookCard
+              key={index}
+              image={book.image}
+              title={book.title}
+              description={book.description}
+              rating={book.rating}
+            />
+          ))}
         </div>
-      </section>
-
-      <section className="bg-white py-10">
-        <div className="container mx-auto">
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 mx-[110px]">
-            {books.map((book, index) => (
-              <BookCard
-                key={index}
-                image={book.image}
-                title={book.title}
-                description={book.description}
-                rating={book.rating}
-              />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-white py-10">
-        <div className="flex flex-wrap justify-center mt-4 mb-4">
-        <button className="px-5 py-2 w[147px] bg-[#FA5E55] text-[#FFFFFF] rounded-full font-bold cursor-pointer">
+      </div>
+    </section>
+    <section>
+      <Link href="/login">
+        <div className='flex items-center justify-center mb-16'>
+          <button  className="px-5 py-2 w-[126px] bg-[#FA5E55] text-white rounded-full font-bold cursor-pointer border-none">
             View All
           </button>
         </div>
-      </section>
+      </Link>
+    </section>
     </>
   );
 }
