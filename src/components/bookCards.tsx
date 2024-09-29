@@ -78,6 +78,25 @@ export default function BookCards() {
 
   return (
     <>
+    <section>
+        <div className="flex flex-wrap justify-center gap-4 mt-12 mb-8">
+          <button className="px-5 py-2 w-40 bg-[#37008E] text-[#BE9BF5] rounded-full font-bold cursor-pointer">
+            Show All
+          </button>
+          <button className="px-5 py-2 w-[109px] bg-[#FFFFFF] text-[#4C4C4C] rounded-full font-bold cursor-pointer border border-dashed border-[#4C4C4C]">
+            Sports
+          </button>
+          <button className="px-5 py-2 w-[109px] bg-[#FFFFFF] text-[#4C4C4C] rounded-full font-bold cursor-pointer border border-dashed border-[#4C4C4C]">
+            Dance
+          </button>
+          <button className="px-5 py-2 w-[109px] bg-[#FFFFFF] text-[#4C4C4C] rounded-full font-bold cursor-pointer border border-dashed border-[#4C4C4C]">
+            Music
+          </button>
+          <button className="px-5 py-2 w-[109px] bg-[#FFFFFF] text-[#4C4C4C] rounded-full font-bold cursor-pointer border border-dashed border-[#4C4C4C]">
+            Indoor
+          </button>
+        </div>
+      </section>
     <section className="bg-white py-10">
       <div className=" mx-auto ml-[170px] mr-[170px]">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mx-auto">
@@ -104,4 +123,5 @@ export default function BookCards() {
     </section>
     </>
   );
+  
 }
