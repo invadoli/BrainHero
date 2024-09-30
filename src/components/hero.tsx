@@ -33,9 +33,7 @@ const Hero = () => {
   return (
     <div style={{ backgroundColor: '#008EA7' }}>
       <section className="flex flex-col lg:flex-row items-start justify-between py-20 relative min-h-screen ml-5 lg:ml-[180px]">
-        {/* Text and Buttons */}
         <div className="relative z-20 max-w-2xl mt-[-35px] lg:mt-[-5px] text-left lg:text-left">
-          {/* Background Cloud */}
           <div className="absolute top-[-5px] left-[190px] lg:top-[-30px] lg:left-[-40px] transform lg:transform-none translate-x-[-50%] lg:translate-x-0 w-[400px] h-[200px] lg:w-[500px] lg:h-[246px] z-20 overflow-hidden">
             <Image src={CloudBackground} alt="Hero Background" layout="fill" objectFit="cover" />
           </div>
@@ -50,12 +48,10 @@ const Hero = () => {
             powered stories!
           </h1>
           
-          {/* Paragraph */}
           <p className={`font-poppins text-sm lg:mt-8 lg:text-base font-normal text-white leading-6 mb-7 ${poppins.className}`}>
             Ignite creativity, reduce screen time, and turn ideas into adventures.
           </p>
           
-          {/* App Store and Google Play Links */}
           <div className="flex justify-start gap-4 mb-7">
             <Link href="https://play.google.com/store/apps/details?id=your_app_id" target="_blank">
               <Image src={googlePlay} alt="Get it on Google Play" width={150} height={50} />
@@ -65,7 +61,6 @@ const Hero = () => {
             </Link>
           </div>
           
-          {/* Button and Text */}
           <div className="flex flex-col lg:flex-row items-start gap-5">
             <button className="px-5 lg:px-10 py-2 bg-yellow-400 text-black rounded-full font-poppins font-bold text-sm lg:text-lg transition duration-300 hover:bg-red-600">
               Start your journey today
@@ -76,20 +71,17 @@ const Hero = () => {
           </div>
         </div>
 
-        {/* Phone Image */}
         <div className="absolute top-[400px] mr-[-30px] left-[140px] transform -translate-x-1 lg:top-10 lg:left-2/3 lg:transform lg:-translate-x-1/2 z-20">
           <Image src={phone} alt="Phone" className="w-[400px] lg:w-[455px] h-auto" />
         </div>
 
         
-        {/* Background Behind Phone */}
         <div className="absolute top-[350px] w-full h-[509px] lg:top-[12%] lg:left-[65%] lg:w-[400px] lg:h-[500px] z-10 overflow-hidden">
           <Image src={MobileBackground} alt="Background Behind Phone" layout="fill" objectFit="cover" className="block lg:hidden z-20" />
           <Image src={BackgroundBehindPhone} alt="Background Behind Phone" layout="fill" objectFit="cover" className="hidden lg:block" />
           <Image src={circle} alt="circle" className="ml-[170px] mt-[100px] lg:hidden z-10" />
         </div>
 
-        {/* Other Decorations */}
         <div className="absolute top-[30%] lg:top-[35%] lg:left-[48%] transform -translate-x-1/2 -translate-y-1/2 rotate-[3deg] w-[50.4px] lg:w-[343px] h-[61.93px] lg:h-[321px] z-0">
           <Image src={object} alt="object" className="hidden lg:block" />
         </div>
@@ -101,7 +93,6 @@ const Hero = () => {
         </div>
       </section>
 
-      {/* Clouds Section */}
       <section className="relative">
         <div className="relative">
           <Image src={Clouds} alt="Cloud Background" className="lg:w-full hidden lg:block " />
