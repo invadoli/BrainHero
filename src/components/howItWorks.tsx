@@ -38,8 +38,8 @@ export default function HowItWorks() {
             <Image src={icons} alt="Create your story"/>
           </div>
           <div className="w-full flex items-end flex-col">
-            <h3 className="text-xl text-[#2D292A] font-bold md:mr-0 mr-[122px] mt-4" style={{ fontSize: '16px' }}>Create your story</h3>
-            <p className="text-[#4C4C4C] mt-6 md:w-0 ml-32 md:ml-0 w-[265px]" style={{ fontSize: '16px' }}> 
+            <h3 className="text-xl text-[#2D292A] font-bold md:mr-auto  mr-[122px] mt-4" style={{ fontSize: '16px' }}>Create your story</h3>
+            <p className="text-[#4C4C4C] mt-6 md:w-auto ml-32 md:ml-0 w-[265px]" style={{ fontSize: '16px' }}> 
               Use our simple tools to craft your story, adding characters, settings, and plot twists along the way.
             </p>
           </div>
