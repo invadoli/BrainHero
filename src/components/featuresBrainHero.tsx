@@ -151,7 +151,7 @@ export default function FeaturesHero() {
               It's free!
             </p>
 
-            <div className="flex justify-center space-x-4 mt-4">
+            <div className="flex justify-center space-x-4 mt-4 mb-24">
               <Link href="https://play.google.com/store/apps/details?id=your_app_id" target="_blank">
                 <Image src={googlePlay} alt="Get it on Google Play" width={150} height={50} />
               </Link>

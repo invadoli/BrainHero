@@ -46,8 +46,8 @@ const Features = () => {
       </div>
       <p className="font-semibold text-[18px] leading-[24px] text-[#88B520]">BOOKS WRITTEN BY KIDS</p>
       <br />
-      <h1 className="text-center font-extrabold text-[35px] leading-[50px]">Discover inspiring stories written by kids, where every</h1>
-      <h1 className="text-center font-extrabold text-[35px] leading-[50px]">page brings imagination and adventure to life</h1>
+      <h1 className="text-center font-extrabold mx-[15px] md:text-[35px] text-[25px] leading-[31px] md:leading-[50px]">Discover inspiring stories written by kids, where every</h1>
+      <h1 className="text-center font-extrabold mx-[15px] md:text-[35px] text-[25px] leading-[31px] md:leading-[50px]">page brings imagination and adventure to life</h1>
     </section>
   );
 };
