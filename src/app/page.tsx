@@ -8,6 +8,7 @@ import HowItWorks from '../components/howItWorks';
 
 const Home = () => {
   return (
+    
     <div>
       <Hero />
       <Features/>
